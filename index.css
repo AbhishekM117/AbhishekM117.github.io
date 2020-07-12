@@ -1,0 +1,103 @@
+
+
+
+:root {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 5vw;
+}
+
+.banner .card {
+    background: #2c2c2c;
+    border: 1px solid #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0px 3px 20px 2px #35eea4;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner .card .heading {
+    color: #35eea4;
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1vh;
+    padding: 5vw;
+}
+
+.banner .card .sub-heading {
+    color: #35eea4;
+    font-family: "Playfair Display", serif;
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0 5vw 2vw;
+}
+
+.banner .card .sub-heading button {
+    background: none;
+    border: none;
+    border-radius: 5px;
+    color: #35eea4;
+    font-family: "Istok Web", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 8px;
+    margin-top: 2vh;
+    padding: 10px;
+    text-transform: uppercase;
+    transition: box-shadow 0.3s linear 0.1s;
+}
+
+.banner .card .sub-heading button:hover {
+    cursor: pointer;
+    box-shadow: 0 3px 20px 0 #35eea4;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.row .my-image {
+    border: 1px solid #35eea4;
+    border-radius: 5px;
+    box-shadow: 0px 3px 20px 2px #2c2c2c;
+    width: 25vw;
+}
+
+@media only screen and (max-width: 725px) {
+    .row {
+        flex-direction: column;
+    }
+    .row .image {
+        order: -1;
+    }
+    .row .my-image {
+        width: 60vw;
+    }
+}
+
+.paragraph {
+    color: #2c2c2c;
+    font-family: "Istok Web", sans-serif;
+    padding: 5vw 5vw 5vw 0;
+}
+
+.icon-group {
+    margin-top: 2vh;
+}
+
+.icon-group .icon {
+    margin-right: 10px;
+    width: 25px;
+}
