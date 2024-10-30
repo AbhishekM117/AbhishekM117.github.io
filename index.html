@@ -1,17 +1,383 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Meeting Planer</title>
-  <base href="/">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhishek's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
-<link rel="stylesheet" href="styles.a3f4560f1cc3f65f30b8.css"></head>
 <body>
-  <app-root></app-root>
-<script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script><script type="text/javascript" src="polyfills.c464aca81d6225320c0a.js"></script><script type="text/javascript" src="scripts.95f63946aa03ea45d109.js"></script><script type="text/javascript" src="main.75770ff8b8618f3105d3.js"></script></body>
+  <nav id="desktop-nav">
+    <div class="logo">Abhishek Murali</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="logo">Abhishek Murali</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="section__pic-container">
+      <img class="circular--square" src="./assets/profile-p.jpg" alt="John Doe profile picture" />
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title">Abhishek Murali</h1>
+      <!-- <p class="section__text__p2">Business Analyst</p> -->
+      <p class="section__text__p2"><span id="element"></span></p>
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('./assets/Abhishek-UK-resume-SEP-N.pdf')">
+          Download CV
+        </button>
+        <button class="btn btn-color-1" onclick="location.href='#contact'">
+          Contact Info
+        </button>
+      </div>
+      <div id="socials-container">
+        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+          onclick="location.href='https://www.linkedin.com/in/abhishek-murali-57a246187/'" />
+        <img src="./assets/github.png" alt="My Github profile" class="icon"
+          onclick="location.href='https://github.com/AbhishekM117'" />
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img src="./assets/headshot.jpeg" alt="Profile picture" class="about-pic" />
+      </div>
+      <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+            <h3>Experience</h3>
+            <p>3+ years <br />Analytical and results-driven Business Analyst with over 3 years of diverse experience
+              across software development and business analysis, providing a unique blend of technical expertise and
+              business acumen.</p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/education.png" alt="Education icon" class="icon" />
+            <h3>Education</h3>
+            <img src="./assets/DU.png" alt="Experience icon" class="du-icon" />
+            <h4>M.Sc Business Analytics - Durham University, UK</h4>
+            <br />
+            <img src="./assets/au_logo.png" alt="Experience icon" class="icon" />
+            <br /><br />
+            <h4>B.Tech Computer Science - Alliance University,
+              Bangalore</h4>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>
+            Results-oriented Business Analyst with chronicle success in software development and business analysis.
+            Excellence in translating business requirements into technical solutions, optimizing processes, and
+            leveraging data insights. Seeking a challenging role to drive digital transformation and enhance strategic
+            initiatives.
+          </p>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#experience'" />
+  </section>
+  <section id="experience">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Work Experience</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container">
+          <h2 class="experience-sub-title">Tata Consultancy Services (TCS)</h2>
+          <h3>Analyst | Bangalore, Karnataka</h3>
+          <h3> Apr' 23 - Oct' 23</h3><br>
+          <div class="article-container">
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Collaborated closely with <b> American Express </b> stakeholders to thoroughly analyze requirements
+                  and design
+                  the cutting-edge Amex for Developers (A4D) application.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Employed Power BI for data visualization, facilitating improved requirement analysis and strategic
+                  project planning.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Worked extensively with teams to optimize customer application integration workflows through detailed
+                  collaboration and analysis.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Utilized data-driven insights from Power BI to enhance and optimize integration processes.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Significantly improved operational efficiency and increased client satisfaction through process
+                  enhancements and data analytics.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Played a key role in developing technical documentation and training resources, enabling smoother
+                  adoption of newly implemented systems by client teams.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Engaged in continuous monitoring and performance tuning of the integration systems to ensure high
+                  availability and reduced downtime for client applications.</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Achieved a 40% reduction in integration time and effort by effectively coordinating cross-functional
+                  teams, identifying workflow inefficiencies, and implementing streamlined processes, resulting in a 50%
+                  increase in project completion rates.
+                </p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="details-container">
+          <h2 class="experience-sub-title">Altisource</h2>
+          <h3>Analyst | Bangalore, Karnataka</h3>
+          <h3> Dec' 20 - Mar' 23</h3><br>
+          <div class="article-container">
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Conducted comprehensive analysis of system requirements to ensure alignment between development
+                  initiatives and business goals.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Leveraged Power BI for advanced data visualization and dashboard creation, facilitating insights into
+                  system needs and optimizing development approaches.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Orchestrated cross-departmental collaboration in an Agile environment, achieving a 33% increase in
+                  productivity and reducing project turnaround time by 20%.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Collaborated closely with IT operations to synchronize deployment schedules, proactively addressing
+                  potential risks.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Evaluated vulnerability reports from the Fortify assessment tool, prioritizing and mitigating
+                  security risks, which resulted in a 30% enhancement in overall system security.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Partnered with security teams and developers to implement effective security protocols, reinforcing
+                  system defenses and fostering a proactive risk management culture.
+                </p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Technology & Tools: Tableau, Power BI, Excel, SQL</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <p>Addressed and resolved over 100 critical vulnerabilities
+                  identified through the Fortify application assessment tool, demonstrating strong analytical skills and
+                  teamwork to uphold system security.
+                </p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#projects'" />
+  </section>
+  <section id="projects">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <!-- Project 1: ShopEase Customer Support Dashboard -->
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/logo-ShopEase.webp" alt="ShopEase Customer Support Dashboard" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">ShopEase Customer Support Analysis & Performance Dashboard</h2>
+          <p class="project-description">
+            A data-driven customer support dashboard designed for ShopEase, an e-commerce company, to enhance customer
+            satisfaction and operational efficiency. Key features include tracking KPIs like CSAT, Average Resolution
+            Time, and Churn Rate by customer segment, and implementing strategies to improve first-contact resolution
+            and streamline support processes. This project includes both predictive analysis and an interactive Power BI
+            dashboard.
+          </p><br />
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/username/shopease-dashboard'">
+              Github
+            </button>
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://live-demo-link.com'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- Placeholder for additional projects -->
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/finance-logo.png" alt="Predictive Financial Data Analysis and Portfolio Management"
+              class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">Predictive Financial Data Analysis and Portfolio Management
+          </h2>
+          <p class="project-description">
+            Developed a data-driven framework for financial analysis and portfolio management using machine learning.
+            Implemented LightGBM to predict stock performance, creating an optimized, conservative portfolio that
+            achieved a 43.83% cumulative return over three years. Emphasis on risk-adjusted returns and conservative
+            parameters led to a benchmark outperformance against the FTSE Small Cap 100.
+          </p><br />
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://live-demo-link.com'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/sms-icon.png" alt="Project 3" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">SMS Spam Detection with NLP and Machine Learning</h2>
+          <p class="project-description">
+            This project explores Natural Language Processing (NLP) techniques for detecting spam in SMS messages. Key
+            elements include feature extraction with TF-IDF and Word2vec, comparing Support Vector Machine (SVM), Random
+            Forest, and LSTM deep learning models. By leveraging TF-IDF with SVM, we achieved a high detection accuracy
+            (98.2%), while LSTM and RNN models offered insights into sequential patterns and generated spam-like text
+            for synthetic data applications.
+          </p><br />
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+              Github
+            </button>
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://live-demo-link.com'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#contact'" />
+  </section>
+
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <p><a href="mailto:Abhishek.murali@durham.ac.uk">Abhishek.murali@durham.ac.uk</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <p><a href="https://www.linkedin.com/in/abhishek-murali-57a246187/">LinkedIn</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <p>+44 7748735493</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <nav>
+      <div class="nav-links-container">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p>Copyright &#169; 2024 Abhishek Murali. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['Business Analyst', 'Product Analyst'],
+      typeSpeed: 50,
+    });
+  </script>
+</body>
+
 </html>
