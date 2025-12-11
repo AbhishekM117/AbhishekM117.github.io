@@ -17,6 +17,8 @@ html {
 
 p {
   color: rgb(85, 85, 85);
+  line-height: 1.6; /* Increased line height for readability */
+  text-align: initial; /* Ensure natural text flow */
 }
 
 /* TRANSITION */
@@ -52,10 +54,11 @@ a {
 }
 
 a:hover {
-  color: grey;
+  /* ACCENT COLOR CHANGE */
+  color: #0077B6;
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-decoration-color: #0077B6;
 }
 
 .logo {
@@ -245,12 +248,14 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-  background: rgb(53, 53, 53);
+  /* ACCENT COLOR CHANGE */
+  background: #0077B6;
   color: white;
 }
 
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  /* ACCENT COLOR CHANGE - Darker shade for better hover contrast */
+  background: #004D7A;
 }
 
 .btn-color-2 {
@@ -309,8 +314,19 @@ section {
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
-  text-align: center;
+  text-align: initial; /* Alignment changed to initial */
 }
+
+/* Text Container Styling for Summary */
+.text-container {
+    text-align: initial;
+}
+
+.text-container p {
+    text-align: initial; 
+    padding: 0 1.5rem; /* Better padding for the text block */
+}
+
 
 .section-container {
   gap: 4rem;
@@ -323,9 +339,9 @@ section {
   margin: auto 0;
 }
 
-/* EXPERIENCE SECTION */
+/* EXPERIENCE & SKILLS SECTION */
 
-#experience {
+#experience, #skills, #projects { 
   position: relative;
 }
 
@@ -333,7 +349,7 @@ section {
   color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 1.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem; 
 }
 
 .experience-details-container {
@@ -347,26 +363,38 @@ section {
   text-align: initial;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 2.5rem;
+  /* Increased gap for better spacing */
+  gap: 3rem; 
   justify-content: space-around;
+  padding: 1rem 0;
 }
 
 article {
   display: flex;
-  width: 10rem;
-  justify-content: space-around;
+  /* Slightly more width to prevent short, awkward lines */
+  width: 17rem; 
+  justify-content: flex-start;
   gap: 0.5rem;
+  margin-bottom: 0.5rem; /* Spacing between rows of articles */
+}
+
+article p {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+article div {
+    /* Ensures text block within article doesn't push the checkmark too far */
+    padding-top: 0.1rem;
 }
 
 article .icon {
   cursor: default;
+  margin-top: 0.2rem;
 }
 
 /* PROJECTS SECTION */
-
-#projects {
-  position: relative;
-}
 
 .color-container {
   border-color: rgb(163, 163, 163);
@@ -380,8 +408,14 @@ article .icon {
 }
 
 .project-title {
-  margin: 1rem;
+  margin: 1rem 0 0.5rem 0;
   color: black;
+}
+
+/* Project description spacing */
+.project-description {
+    padding: 0 1rem;
+    text-align: initial;
 }
 
 .project-btn {

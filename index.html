@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhishek's Portfolio</title>
+  <title>Abhishek's Portfolio - Principal Data Analyst</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
 </head>
@@ -17,6 +17,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -33,6 +34,7 @@
       <div class="menu-links">
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
       </div>
@@ -40,15 +42,14 @@
   </nav>
   <section id="profile">
     <div class="section__pic-container">
-      <img class="circular--square" src="./assets/profile-p.jpg" alt="John Doe profile picture" />
+      <img class="circular--square" src="./assets/profile-p.jpg" alt="Abhishek Murali profile picture" />
     </div>
     <div class="section__text">
       <p class="section__text__p1">Hello, I'm</p>
       <h1 class="title">Abhishek Murali</h1>
-      <!-- <p class="section__text__p2">Business Analyst</p> -->
       <p class="section__text__p2"><span id="element"></span></p>
       <div class="btn-container">
-        <button class="btn btn-color-2" onclick="window.open('./assets/Abhishek-UK-resume-SEP-N.pdf')">
+        <button class="btn btn-color-2" onclick="window.open('./assets/Abhishek_Murali_CV.pdf')">
           Download CV
         </button>
         <button class="btn btn-color-1" onclick="location.href='#contact'">
@@ -57,7 +58,7 @@
       </div>
       <div id="socials-container">
         <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-          onclick="location.href='https://www.linkedin.com/in/abhishek-murali-57a246187/'" />
+          onclick="location.href='https://www.linkedin.com/in/abhishek--murali/'" />
         <img src="./assets/github.png" alt="My Github profile" class="icon"
           onclick="location.href='https://github.com/AbhishekM117'" />
       </div>
@@ -75,17 +76,15 @@
           <div class="details-container">
             <img src="./assets/experience.png" alt="Experience icon" class="icon" />
             <h3>Experience</h3>
-            <p>3+ years <br />Analytical and results-driven Business Analyst with over 3 years of diverse experience
-              across software development and business analysis, providing a unique blend of technical expertise and
-              business acumen.</p>
+            <p>6+ years <br />Principal / Lead Data Analyst with 6+ years building data warehouses (BigQuery), Airflow pipelines, and self-serve BI that power executive KPIs, experimentation, and ops tooling.</p>
           </div>
           <div class="details-container">
             <img src="./assets/education.png" alt="Education icon" class="icon" />
             <h3>Education</h3>
-            <img src="./assets/DU.png" alt="Experience icon" class="du-icon" />
+            <img src="./assets/DU.png" alt="Durham University" class="du-icon" />
             <h4>M.Sc Business Analytics - Durham University, UK</h4>
             <br />
-            <img src="./assets/au_logo.png" alt="Experience icon" class="icon" />
+            <img src="./assets/au_logo.png" alt="Alliance University" class="icon" />
             <br /><br />
             <h4>B.Tech Computer Science - Alliance University,
               Bangalore</h4>
@@ -93,10 +92,7 @@
         </div>
         <div class="text-container">
           <p>
-            Results-oriented Business Analyst with chronicle success in software development and business analysis.
-            Excellence in translating business requirements into technical solutions, optimizing processes, and
-            leveraging data insights. Seeking a challenging role to drive digital transformation and enhance strategic
-            initiatives.
+            Results-oriented **Principal Data Analyst** with 6+ years of success across Product, Ops, Finance, and IoT/Hardware. Expert in defining metrics, hardening data quality, and shipping decision support that drives adoption, reliability, and cost. Strong technical skills in **SQL/Python, BigQuery, Airflow, Looker/Power BI**, and expertise in **GDPR/PII** compliance and executive storytelling. Focus on building modern, scalable data solutions.
           </p>
         </div>
       </div>
@@ -108,6 +104,71 @@
     <h1 class="title">Work Experience</h1>
     <div class="experience-details-container">
       <div class="about-containers">
+        
+        <div class="details-container">
+            <h2 class="experience-sub-title">Port</h2>
+            <h3>Principal Data Analyst | London, United Kingdom</h3>
+            <h3> Sep' 2025 - Present</h3><br>
+            <div class="article-container">
+                <article>
+                    <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                    <div>
+                        <p>Built **BigQuery warehouse from zero v1**; integrated batch app data + IoT telemetry streams; implemented SLA-driven data contracts.</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                    <div>
+                        <p>Deployed Cloud Composer (**Airflow**) and standardised ELT; improved data lineage, alerts, and data tests to boost trust and reliability.</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                    <div>
+                        <p>Stood up exec KPI layer & self-serve (**Looker**); enabled weekly board-grade reporting and ad-hoc decisioning.</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                    <div>
+                        <p>Drove **GDPR readiness** (PII mapping, retention, access controls) and partner data sharing guardrails.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+        
+        <div class="details-container">
+            <h2 class="experience-sub-title">Easyship</h2>
+            <h3>Product Data Analyst | London, United Kingdom</h3>
+            <h3> Nov' 2024 - Aug' 2025</h3><br>
+            <div class="article-container">
+                <article>
+                    <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                    <div>
+                        <p>Delivered SSOT metrics for onboarding/activation/retention; cut decision latency **-30%** with Power BI/Metabase.</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                    <div>
+                        <p>Improved feature adoption **+25%** and reduced ops cost drivers **-19%** by authoring PRDs/stories/AC for analytics features.</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                    <div>
+                        <p>Modeled star schemas and instituted data dictionaries/lineage; improved cross-team handover clarity **+40%**.</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                    <div>
+                        <p>Ran **A/B and cohort analyses**; packaged exec readouts into actions for PMs/COO/Head of Ops.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
         <div class="details-container">
           <h2 class="experience-sub-title">Tata Consultancy Services (TCS)</h2>
           <h3>Analyst | Bangalore, Karnataka</h3>
@@ -116,225 +177,109 @@
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <p>Collaborated closely with <b> American Express </b> stakeholders to thoroughly analyze requirements
-                  and design
-                  the cutting-edge Amex for Developers (A4D) application.
-                </p>
+                <p>Captured functional/NFR requirements in regulated payments; wrote BDD/use cases with full traceability.</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <p>Employed Power BI for data visualization, facilitating improved requirement analysis and strategic
-                  project planning.
-                </p>
+                <p>Built Tableau/Power BI API-adoption views; tuned SQL/ETL to improve refresh by **50%**.</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <p>Worked extensively with teams to optimize customer application integration workflows through detailed
-                  collaboration and analysis.
-                </p>
+                <p>Established metric governance and change control for audit-ready reporting.</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <p>Utilized data-driven insights from Power BI to enhance and optimize integration processes.
-                </p>
+                <p>Created option assessments (TCO/sensitivity) to steer roadmap & risk posture trade-offs.</p>
               </div>
             </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <p>Significantly improved operational efficiency and increased client satisfaction through process
-                  enhancements and data analytics.
-                </p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <p>Played a key role in developing technical documentation and training resources, enabling smoother
-                  adoption of newly implemented systems by client teams.
-                </p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <p>Engaged in continuous monitoring and performance tuning of the integration systems to ensure high
-                  availability and reduced downtime for client applications.</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <p>Achieved a 40% reduction in integration time and effort by effectively coordinating cross-functional
-                  teams, identifying workflow inefficiencies, and implementing streamlined processes, resulting in a 50%
-                  increase in project completion rates.
-                </p>
-              </div>
-            </article>
-
           </div>
         </div>
 
         <div class="details-container">
           <h2 class="experience-sub-title">Altisource</h2>
-          <h3>Analyst | Bangalore, Karnataka</h3>
+          <h3>Data Analyst | Bangalore, Karnataka</h3>
           <h3> Dec' 20 - Mar' 23</h3><br>
           <div class="article-container">
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <p>Conducted comprehensive analysis of system requirements to ensure alignment between development
-                  initiatives and business goals.
-                </p>
+                <p>Unified MySQL/PostgreSQL/Oracle into governed BI layers; Python DQ cut reporting errors by **45%**.</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <p>Leveraged Power BI for advanced data visualization and dashboard creation, facilitating insights into
-                  system needs and optimizing development approaches.
-                </p>
+                <p>Built usage/health dashboards surfacing activation/churn/throughput signals for product & ops.</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <p>Orchestrated cross-departmental collaboration in an Agile environment, achieving a 33% increase in
-                  productivity and reducing project turnaround time by 20%.
-                </p>
+                <p>Authored SOPs, data dictionaries, and onboarding packs; accelerated team ramp-up.</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <p>Collaborated closely with IT operations to synchronize deployment schedules, proactively addressing
-                  potential risks.
-                </p>
+                <p>Partnered with Finance/Supply Chain on reconciliations and vendor performance KPIs.</p>
               </div>
             </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <p>Evaluated vulnerability reports from the Fortify assessment tool, prioritizing and mitigating
-                  security risks, which resulted in a 30% enhancement in overall system security.
-                </p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <p>Partnered with security teams and developers to implement effective security protocols, reinforcing
-                  system defenses and fostering a proactive risk management culture.
-                </p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <p>Technology & Tools: Tableau, Power BI, Excel, SQL</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <p>Addressed and resolved over 100 critical vulnerabilities
-                  identified through the Fortify application assessment tool, demonstrating strong analytical skills and
-                  teamwork to uphold system security.
-                </p>
-              </div>
-            </article>
+          </div>
+        </div>
 
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#skills'" />
+  </section>
+
+  <section id="skills">
+    <p class="section__text__p1">Deep Dive Into My</p>
+    <h1 class="title">Technical Competencies</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container">
+          <h2 class="experience-sub-title">Data Engineering & ML Ops</h2>
+          <div class="article-container">
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>SQL (T-SQL/Postgres)</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>Python (Pandas/NumPy)</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>**BigQuery**</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>Airflow (Cloud Composer)</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>dbt (exposure)</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>IoT Telemetry Ingestion</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>Data Mesh Concepts</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>ML Ops (Monitoring)</p></div></article>
+          </div>
+        </div>
+        <div class="details-container">
+          <h2 class="experience-sub-title">BI, Governance & Innovation</h2>
+          <div class="article-container">
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>Looker, Power BI, Metabase</p></div></article>
+            <article><img src src="./assets/checkmark.png" class="icon" /><div><p>A/B Testing, Cohorts/Funnels</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>GDPR/PII Mapping</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>Data Contracts/Lineage</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>Exec Storytelling & Alignment</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>Product Requirements (PRDs, AC)</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>LLM/GenAI Exposure</p></div></article>
+            <article><img src="./assets/checkmark.png" class="icon" /><div><p>TCO/Sensitivity Analysis</p></div></article>
           </div>
         </div>
       </div>
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#projects'" />
   </section>
+
   <section id="projects">
     <p class="section__text__p1">Browse My Recent</p>
     <h1 class="title">Projects</h1>
     <div class="experience-details-container">
-      <div class="about-containers">
-
-        <!-- Project 1: ShopEase Customer Support Dashboard -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/logo-ShopEase.webp" alt="ShopEase Customer Support Dashboard" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">ShopEase Customer Support Analysis & Performance Dashboard</h2>
-          <p class="project-description">
-            A data-driven customer support dashboard designed for ShopEase, an e-commerce company, to enhance customer
-            satisfaction and operational efficiency. Key features include tracking KPIs like CSAT, Average Resolution
-            Time, and Churn Rate by customer segment, and implementing strategies to improve first-contact resolution
-            and streamline support processes. This project includes both predictive analysis and an interactive Power BI
-            dashboard.
-          </p><br />
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/username/shopease-dashboard'">
-              Github
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://live-demo-link.com'">
-              Live Demo
-            </button>
-          </div>
+      <div class="about-containers" id="projects-container">
         </div>
-
-        <!-- Placeholder for additional projects -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/finance-logo.png" alt="Predictive Financial Data Analysis and Portfolio Management"
-              class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Predictive Financial Data Analysis and Portfolio Management
-          </h2>
-          <p class="project-description">
-            Developed a data-driven framework for financial analysis and portfolio management using machine learning.
-            Implemented LightGBM to predict stock performance, creating an optimized, conservative portfolio that
-            achieved a 43.83% cumulative return over three years. Emphasis on risk-adjusted returns and conservative
-            parameters led to a benchmark outperformance against the FTSE Small Cap 100.
-          </p><br />
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-              Github
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://live-demo-link.com'">
-              Live Demo
-            </button>
-          </div>
-        </div>
-
-
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/sms-icon.png" alt="Project 3" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">SMS Spam Detection with NLP and Machine Learning</h2>
-          <p class="project-description">
-            This project explores Natural Language Processing (NLP) techniques for detecting spam in SMS messages. Key
-            elements include feature extraction with TF-IDF and Word2vec, comparing Support Vector Machine (SVM), Random
-            Forest, and LSTM deep learning models. By leveraging TF-IDF with SVM, we achieved a high detection accuracy
-            (98.2%), while LSTM and RNN models offered insights into sequential patterns and generated spam-like text
-            for synthetic data applications.
-          </p><br />
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-              Github
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://live-demo-link.com'">
-              Live Demo
-            </button>
-          </div>
-        </div>
-
-
-      </div>
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#contact'" />
   </section>
@@ -345,11 +290,11 @@
     <div class="contact-info-upper-container">
       <div class="contact-info-container">
         <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:Abhishek.murali@durham.ac.uk">Abhishek.murali@durham.ac.uk</a></p>
+        <p><a href="mailto:abhishek.murali1998@gmail.com">abhishek.murali1998@gmail.com</a></p>
       </div>
       <div class="contact-info-container">
         <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com/in/abhishek-murali-57a246187/">LinkedIn</a></p>
+        <p><a href="https://www.linkedin.com/in/abhishek--murali/">LinkedIn</a></p>
       </div>
       <div class="contact-info-container">
         <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
@@ -363,6 +308,7 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -370,12 +316,15 @@
     </nav>
     <p>Copyright &#169; 2024 Abhishek Murali. All Rights Reserved.</p>
   </footer>
+  
+  <script src="projects-data.js"></script>
   <script src="script.js"></script>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script>
     var typed = new Typed('#element', {
-      strings: ['Business Analyst', 'Product Analyst'],
+      strings: ['Principal Data Analyst', 'Lead Data Analyst', 'Cross-Functional Operator', 'Data Engineer'],
       typeSpeed: 50,
+      loop: true
     });
   </script>
 </body>
