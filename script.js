@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         projectsData.forEach(project => {
             // Build the HTML structure as a template string
+            // NOTE: Using single quotes inside the template for window.open arguments for correct JS syntax
             const projectHTML = `
                 <div class="details-container color-container">
                     <div class="article-container">

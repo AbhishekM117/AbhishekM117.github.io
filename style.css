@@ -17,8 +17,8 @@ html {
 
 p {
   color: rgb(85, 85, 85);
-  line-height: 1.6; /* Increased line height for readability */
-  text-align: initial; /* Ensure natural text flow */
+  line-height: 1.6; 
+  text-align: initial; 
 }
 
 /* TRANSITION */
@@ -314,7 +314,7 @@ section {
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
-  text-align: initial; /* Alignment changed to initial */
+  text-align: initial; 
 }
 
 /* Text Container Styling for Summary */
@@ -324,7 +324,7 @@ section {
 
 .text-container p {
     text-align: initial; 
-    padding: 0 1.5rem; /* Better padding for the text block */
+    padding: 0 1.5rem; 
 }
 
 
@@ -375,17 +375,18 @@ article {
   width: 17rem; 
   justify-content: flex-start;
   gap: 0.5rem;
-  margin-bottom: 0.5rem; /* Spacing between rows of articles */
+  margin-bottom: 1rem; /* Increased margin for better vertical separation */
 }
 
 article p {
     margin-top: 0;
     margin-bottom: 0;
     text-align: left;
+    /* Ensure text within articles doesn't wrap awkwardly */
+    line-height: 1.4; 
 }
 
 article div {
-    /* Ensures text block within article doesn't push the checkmark too far */
     padding-top: 0.1rem;
 }
 
