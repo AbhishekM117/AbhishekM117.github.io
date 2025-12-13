@@ -5,10 +5,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; 
 }
 
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden; /* Immediate fix for horizontal scroll */
 }
 
 html {
@@ -153,10 +155,9 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
+  height: fit-content;
+  min-height: 96vh;
   margin: 0 10rem;
-  box-sizing: border-box;
-  min-height: fit-content;
 }
 
 .section-container {
@@ -341,7 +342,7 @@ section {
 
 /* EXPERIENCE & SKILLS SECTION */
 
-#experience, #skills, #projects { 
+#experience, #skills, #projects, #case-studies, #insights { 
   position: relative;
 }
 
@@ -356,6 +357,7 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: 3rem; 
 }
 
 .article-container {
@@ -363,7 +365,6 @@ section {
   text-align: initial;
   flex-wrap: wrap;
   flex-direction: row;
-  /* Increased gap for better spacing */
   gap: 3rem; 
   justify-content: space-around;
   padding: 1rem 0;
@@ -371,18 +372,16 @@ section {
 
 article {
   display: flex;
-  /* Slightly more width to prevent short, awkward lines */
   width: 17rem; 
   justify-content: flex-start;
   gap: 0.5rem;
-  margin-bottom: 1rem; /* Increased margin for better vertical separation */
+  margin-bottom: 1rem; 
 }
 
 article p {
     margin-top: 0;
     margin-bottom: 0;
     text-align: left;
-    /* Ensure text within articles doesn't wrap awkwardly */
     line-height: 1.4; 
 }
 
@@ -395,7 +394,7 @@ article .icon {
   margin-top: 0.2rem;
 }
 
-/* PROJECTS SECTION */
+/* PROJECTS & CASE STUDIES SECTION */
 
 .color-container {
   border-color: rgb(163, 163, 163);
@@ -423,6 +422,34 @@ article .icon {
   color: black;
   border-color: rgb(163, 163, 163);
 }
+
+/* INSIGHTS BLOG SECTION SPECIFIC STYLES - Simple and stable */
+#insights .about-containers {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#insights .details-container {
+    /* Allowing 3 cards per row */
+    flex: 0 1 30%;
+    min-width: 300px;
+    margin: 0.5rem; 
+    text-align: left;
+    cursor: pointer; 
+}
+
+#insights .details-container:hover {
+    background-color: rgb(240, 240, 240);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}
+
+#insights p {
+    margin-bottom: 0.5rem;
+}
+
 
 /* CONTACT */
 

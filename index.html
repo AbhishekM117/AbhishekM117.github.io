@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhishek's Portfolio - Principal Data Analyst</title>
+  <meta name="description" content="Principal Data Analyst portfolio of Abhishek Murali, specializing in BigQuery, Airflow, IoT, GDPR, and driving retention through data-driven strategy.">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
 </head>
@@ -18,7 +19,9 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#projects">Platform Project</a></li>
+        <li><a href="#case-studies">Case Studies</a></li>
+        <li><a href="#insights">Insights Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -35,7 +38,9 @@
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
         <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Platform Project</a></li>
+        <li><a href="#case-studies" onclick="toggleMenu()">Case Studies</a></li>
+        <li><a href="#insights" onclick="toggleMenu()">Insights Blog</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
       </div>
     </div>
@@ -119,7 +124,7 @@
                 <article>
                     <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                     <div>
-                        <p>Deployed Cloud Composer (<b>Airflow</b>) and standardised ELT; improved data lineage, alerts, and data tests to boost trust and reliability.</p>
+                        <p>Deployed <b>Cloud Composer (Airflow)</b> and standardised ELT; improved data lineage, alerts, and data tests to boost trust and reliability.</p>
                     </div>
                 </article>
                 <article>
@@ -302,14 +307,141 @@
   </section>
 
   <section id="projects">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Projects</h1>
+    <p class="section__text__p1">Core Data Work</p>
+    <h1 class="title">Data Platform & ML Projects</h1>
     <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container color-container" style="flex: 2; margin-bottom: 2rem;">
+            <h2 class="experience-sub-title project-title">BigQuery Data Platform Foundation (Port)</h2>
+            <p class="project-description" style="text-align: initial; padding: 0 1rem;">
+                As the sole Principal Data Analyst, I built the foundational, production-grade data platform to power executive reporting, operational tooling, and product innovation.
+            </p>
+            <div class="article-container" style="justify-content: space-around; width: 90%; margin: 1rem auto;">
+                <article style="width: 45%;">
+                    <img src="./assets/checkmark.png" class="icon" />
+                    <div><p>Designed and built the <b>BigQuery warehouse from zero v1</b>, integrating batch app data and complex <b>IoT telemetry streams</b>.</p></div>
+                </article>
+                <article style="width: 45%;">
+                    <img src="./assets/checkmark.png" class="icon" />
+                    <div><p>Deployed <b>Cloud Composer (Airflow)</b> for standardized ELT, establishing data contracts, lineage, and automated DQ tests.</p></div>
+                </article>
+                <article style="width: 45%;">
+                    <img src="./assets/checkmark.png" class="icon" />
+                    <div><p>Stood up the exec KPI layer and self-serve BI (Looker/Power BI) for board-grade reporting and ad-hoc decisioning.</p></div>
+                </article>
+                <article style="width: 45%;">
+                    <img src="./assets/checkmark.png" class="icon" />
+                    <div><p>Implemented key governance processes, including PII mapping and <b>GDPR readiness</b> for data retention and access controls.</p></div>
+                </article>
+            </div>
+            <div class="btn-container">
+              <button class="btn btn-color-1 project-btn" onclick="location.href='blog-post-platform.html'">
+                View Architecture Deep Dive
+              </button>
+            </div>
+        </div>
+      </div>
+      
       <div class="about-containers" id="projects-container">
+        </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#case-studies'" />
+  </section>
+
+  <section id="case-studies">
+    <p class="section__text__p1">Measurable Business Impact</p>
+    <h1 class="title">Data-Driven Case Studies</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <div class="details-container color-container" style="padding: 2rem;">
+            <h2 class="experience-sub-title project-title" style="margin-bottom: 0.5rem;">Stabilizing Early Rider Retention with Commitment Plan</h2>
+            <p class="project-description" style="padding: 0; margin-bottom: 1rem;">
+                <b>Impact:</b> Modeled and proposed a 4-week optional commitment plan to mitigate early churn. Forecasting showed K4 retention moving from 26% (current) to 48% (30% adoption), stabilizing revenue predictability.
+            </p>
+            <div class="btn-container">
+                <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/PORT — Rider Commitment Strategy Proposal.pdf', '_blank')">
+                    Read Full Report (PDF)
+                </button>
+            </div>
+        </div>
+
+        <div class="details-container color-container" style="padding: 2rem;">
+            <h2 class="experience-sub-title project-title" style="margin-bottom: 0.5rem;">De-risking Self-Force Finish (SFF) Feature & Operational Failure</h2>
+            <p class="project-description" style="padding: 0; margin-bottom: 1rem;">
+                <b>Impact:</b> Segmented users by SFF Ratio (>25% identified as High-Risk). Found Q-Park Leicester Square had 3,000+ SFF events—not from abusers, but from High-Value Customers signaling critical GPS/operational failure, prioritizing immediate product fix.
+            </p>
+            <div class="btn-container">
+                <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/SFF-Report.pdf', '_blank')">
+                    Read Full Report (PDF)
+                </button>
+            </div>
+        </div>
+
+        <div class="details-container color-container" style="padding: 2rem;">
+            <h2 class="experience-sub-title project-title" style="margin-bottom: 0.5rem;">Optimizing IoT Battery Swap Deployment Strategy</h2>
+            <p class="project-description" style="padding: 0; margin-bottom: 1rem;">
+                <b>Impact:</b> Designed <b>Swaps/Bike/Week (Fleet Pressure)</b> metric to normalize demand, prioritizing deployment at ParkBee Lanark Road (15.2 Swaps/Bike/Week). Identified <b>Port Bancroft Road</b> for investigation into 60% SOC swap anomaly (sensor error).
+            </p>
+            <div class="btn-container">
+                <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/Battery-swap-SOC-Report.pdf', '_blank')">
+                    Read Full Report (PDF)
+                </button>
+            </div>
+        </div>
+
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#insights'" />
+  </section>
+
+  <section id="insights">
+    <p class="section__text__p1">Thought Leadership</p>
+    <h1 class="title">Abhishek's Data Musings (Blog)</h1>
+    <div class="experience-details-container">
+        <div class="about-containers" id="insights-container">
+        
+            <div class="details-container" onclick="location.href='blog-post-platform.html'">
+                <h2 class="experience-sub-title">1. From Zero to KPI: Architecting a BigQuery Data Warehouse for IoT Telemetry.</h2>
+                <p><b>Pillars:</b> Engineering/Platform</p>
+                <p><b>Summary:</b> A deep dive into the technical challenges and architectural decisions when setting up a scalable, production-grade warehouse on GCP to handle high-velocity IoT streams.</p>
+            </div>
+
+            <div class="details-container" onclick="location.href='blog-renderer.html?post=2'">
+                <h2 class="experience-sub-title">2. Data Contracts as GDPR: How Data Quality Hardens PII Compliance.</h2>
+                <p><b>Pillars:</b> Governance/ML Ops</p>
+                <p><b>Summary:</b> Discussing the operational overlap between enforcing data contracts for reliability and ensuring PII mapping, retention, and access controls align with GDPR requirements.</p>
+            </div>
+
+            <div class="details-container" onclick="location.href='blog-renderer.html?post=3'">
+                <h2 class="experience-sub-title">3. Beyond A/B Tests: Using Cohort Analysis to Model Product Commitment and Predict Churn.</h2>
+                <p><b>Pillars:</b> Product/Strategy</p>
+                <p><b>Summary:</b> A guide on leveraging K0-K4 retention curves and cohort behavior to model potential product changes (like commitment plans) before implementation, mitigating risk.</p>
+            </div>
+
+            <div class="details-container" onclick="location.href='blog-renderer.html?post=4'">
+                <h2 class="experience-sub-title">4. Swaps/Bike/Week: Normalizing Demand to Identify Fleets Under Extreme Stress.</h2>
+                <p><b>Pillars:</b> Operational Efficiency</p>
+                <p><b>Summary:</b> How designing a custom, normalized metric (Swaps/Bike/Week) can override basic volume analysis to provide a true picture of operational intensity and guide capital deployment.</p>
+            </div>
+
+            <div class="details-container" onclick="location.href='blog-renderer.html?post=5'">
+                <h2 class="experience-sub-title">5. The SFF Ratio: Segmenting Users to Differentiate Abuse from Operational Failure.</h2>
+                <p><b>Pillars:</b> User Experience/Segmentation</p>
+                <p><b>Summary:</b> Detailing the power of segmentation to distinguish high-value customer failure signals from low-value behavioral abuse, leading to clear, differentiated product actions.</p>
+            </div>
+
+            <div class="details-container" onclick="location.href='blog-renderer.html?post=6'">
+                <h2 class="experience-sub-title">6. Looker vs. Power BI: Aligning Self-Serve BI to Stakeholder Decision Latency.</h2>
+                <p><b>Pillars:</b> BI/Tooling</p>
+                <p><b>Summary:</b> A comparison of BI tools based on use case—why Looker suits executive alignment and ad-hoc decisioning, while Power BI/Metabase may better serve embedded operational teams.</p>
+            </div>
+
         </div>
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#contact'" />
   </section>
+
 
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
@@ -336,7 +468,9 @@
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#projects">Platform Project</a></li>
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="#insights">Insights Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="blog-title-tag">Abhishek's Data Musings</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #004D7A;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #0077B6;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        p, ul, ol, li {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 40px;
+        }
+        .pill {
+            display: inline-block;
+            background-color: #0077B6;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        .header-image-container {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .back-link {
+            display: block;
+            margin-top: 40px;
+            text-align: center;
+            color: #0077B6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="javascript:history.back()" class="back-link">← Back to Portfolio</a>
+        
+        <div class="header-image-container">
+            <img src="./assets/Micromobility_14.png" alt="Micromobility bike and dock from PORT" class="header-image" />
+        </div>
+
+        <h1 id="blog-title"></h1>
+        <div id="blog-pillars" class="pill"></div>
+        <div id="blog-content">
+            <p>Loading content...</p>
+        </div>
+
+        <a href="javascript:history.back()" class="back-link">← Back to Portfolio</a>
+    </div>
+
+    <script src="blog-master-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const postId = parseInt(params.get('post'));
+            
+            if (typeof blogContent !== 'undefined' && postId) {
+                const post = blogContent.find(p => p.id === postId);
+                
+                if (post) {
+                    document.getElementById('blog-title').textContent = post.title.substring(3); // Remove leading number
+                    document.getElementById('blog-title-tag').textContent = post.title.substring(3); 
+                    document.getElementById('blog-pillars').textContent = 'Pillars: ' + post.pillars;
+                    document.getElementById('blog-content').innerHTML = post.content;
+                } else {
+                    document.getElementById('blog-content').innerHTML = '<p>Error: Blog post not found.</p>';
+                }
+            } else {
+                document.getElementById('blog-content').innerHTML = '<p>Error: Invalid request or blog data not available.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

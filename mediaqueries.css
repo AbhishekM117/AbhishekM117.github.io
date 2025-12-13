@@ -8,7 +8,9 @@
   }
   #contact,
   #projects,
-  #skills { /* Added #skills */
+  #skills,
+  #case-studies,
+  #insights { 
     height: fit-content;
   }
 }
@@ -21,7 +23,9 @@
     display: flex;
   }
   #experience,
-  #skills, /* Added #skills */
+  #skills,
+  #case-studies,
+  #insights,
   .experience-details-container {
     margin-top: 2rem;
   }
@@ -37,7 +41,7 @@
     height: fit-content;
   }
   section {
-    margin: 0 5%;
+    margin: 0 5%; 
   }
   .section__pic-container {
     width: 275px;
@@ -46,6 +50,11 @@
   }
   .about-containers {
     margin-top: 0;
+  }
+  
+  /* Ensuring blog cards take full width on tablets/small desktops */
+  #insights .details-container {
+      min-width: 90%; 
   }
 }
 
@@ -59,8 +68,7 @@
     margin-bottom: 0;
   }
   article {
-    /* Adjusted width for smaller screens */
-    width: 100%; 
+    width: 95%; 
     font-size: 1rem;
     justify-content: flex-start;
   }
@@ -103,6 +111,11 @@
     font-size: 2rem;
   }
   .text-container {
-    text-align: justify;
+    text-align: left;
+  }
+  
+  /* Ensuring blog cards stack cleanly on mobile */
+  #insights .details-container {
+      min-width: 100%; 
   }
 }

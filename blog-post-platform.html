@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Zero to KPI: BigQuery Data Warehouse for IoT</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #004D7A;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #0077B6;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        p, ul, ol {
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .header-image-container {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .back-link {
+            display: block;
+            margin-top: 40px;
+            text-align: center;
+            color: #0077B6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="javascript:history.back()" class="back-link">← Back to Portfolio</a>
+        <h1>From Zero to KPI: Architecting a BigQuery Data Warehouse for IoT Telemetry.</h1>
+        
+        <div class="header-image-container">
+            <img src="./assets/Micromobility_14.png" alt="Micromobility bike and dock from PORT" class="header-image" />
+        </div>
+
+        <p>As the Principal Data Analyst, the task of building a production-grade data platform from the ground up required marrying real-time IoT telemetry with batch application data. This foundational project was crucial not just for analytics, but for operational stability and executive decision-making. We chose Google Cloud Platform (GCP) for its native integration with BigQuery and its scalable Pub/Sub and Dataflow services.</p>
+
+        <h2>Phase 1: Ingestion and Transport (The IoT Challenge)</h2>
+        <p>IoT telemetry, characterized by high volume and rapid velocity, required a stream-native approach to ingestion. The bikes generate thousands of events per second (location updates, battery state, lock/unlock events).</p>
+        
+        <h3>Core Components:</h3>
+        <ul>
+            <li><strong>IoT Core/Edge Devices:</strong> Devices push raw JSON telemetry data.</li>
+            <li><strong>Cloud Pub/Sub:</strong> Acts as the highly durable, scalable messaging queue. This decoupled ingestion from processing, ensuring raw data was never lost, regardless of downstream BigQuery latency.</li>
+            <li><strong>Cloud Dataflow (or Data Fusion):</strong> Used for stream processing. The primary logic here was schema validation, light transformation (e.g., geocoding raw coordinates), and routing data from Pub/Sub to BigQuery.</li>
+        </ul>
+
+        <h2>Phase 2: Storage and Transformation (Building the Warehouse)</h2>
+        <p>BigQuery was selected as the central data warehouse due to its native columnar storage, SQL interface, and ability to handle petabytes of data without managing infrastructure. This is where raw data is curated into usable products.</p>
+        
+        <h3>BigQuery Architecture:</h3>
+        <ul>
+            <li><strong>Raw Layer (`RAW`):</strong> Contains exact copies of the JSON payloads from Pub/Sub, partitioned by ingestion date. Used primarily for debugging and regulatory compliance (GDPR/PII auditing).</li>
+            <li><strong>Staging Layer (`STG`):</strong> Data is standardized, cast into proper types, and denormalized slightly (e.g., joining user IDs to application data) using Airflow tasks running dbt (Data Build Tool).</li>
+            <li><strong>Mart Layer (`MART`):</strong> The consumer-facing layer. This contains optimized tables (e.g., `MART.fact_rides`, `MART.dim_hubs`) modeled using <strong>Star Schemas</strong> to ensure fast querying for BI and analyst ad-hoc reporting.</li>
+        </ul>
+
+        <h2>Phase 3: Orchestration and Governance (Airflow and Data Contracts)</h2>
+        <p>As the first Principal Data Analyst, implementing a robust orchestration layer was necessary to ensure data reliability and consistency, particularly for executive KPIs that needed strict SLAs.</p>
+
+        <h3>Airflow and dbt Implementation:</h3>
+        <ul>
+            <li><strong>Cloud Composer (Airflow):</strong> Deployed to manage Directed Acyclic Graphs (DAGs) for batch ELT processes (e.g., loading daily transactional app data) and coordinating BigQuery/dbt transformations.</li>
+            <li><strong>Data Contracts:</strong> Defined clear data quality expectations (schema, null checks, uniqueness) for critical datasets in the `STG` layer. Failures trigger alerts via Airflow, ensuring downstream KPIs are never silently corrupted.</li>
+            <li><strong>GDPR Readiness:</strong> Established PII mapping (what data is PII?), retention policies (how long is it kept?), and access controls (who can query it?). This was critical for operational defense.</li>
+        </ul>
+
+        <h2>Phase 4: Consumption and KPI Alignment</h2>
+        <p>The final step was moving from raw data to actionable business insights, directly addressing the board's reporting needs.</p>
+
+        <h3>BI Layer (Looker/Power BI):</h3>
+        <ul>
+            <li><strong>Executive Reporting (Looker):</strong> Used for board-grade KPIs and self-serve exploration, allowing senior stakeholders to drill down on metrics like CAC payback and Rider LTV.</li>
+            <li><strong>Operational Dashboards (Power BI/Metabase):</strong> Used by Operations and Customer Support teams for real-time monitoring and day-to-day decisioning (e.g., monitoring fleet pressure, as detailed in our case studies).</li>
+        </ul>
+        <p>This architecture provided the foundation for every strategic project at Port, from the Rider Commitment modeling to the SFF operational analysis.</p>
+
+        <a href="javascript:history.back()" class="back-link">← Back to Portfolio</a>
+    </div>
+</body>
+</html>
