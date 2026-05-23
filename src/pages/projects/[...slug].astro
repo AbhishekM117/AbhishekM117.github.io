@@ -1,0 +1,48 @@
+---
+import { getCollection, render } from "astro:content";
+import Article from "../../layouts/Article.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects", ({ data }) => !data.draft);
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { data } = project;
+
+const meta = [
+  { k: "company", v: data.company, accent: true },
+  { k: "role", v: data.role },
+  { k: "period", v: data.period },
+];
+---
+
+<Article
+  title={data.title}
+  description={data.description}
+  backHref="/projects"
+  backLabel="all projects"
+  meta={meta}
+>
+  {
+    data.stack.length > 0 && (
+      <p>
+        <strong>Stack:</strong> {data.stack.join(" · ")}
+      </p>
+    )
+  }
+
+  <Content />
+
+  {
+    data.pdf && (
+      <a class="btn btn--primary report-link" href={data.pdf} target="_blank" rel="noopener">
+        Read the full report (PDF) <span class="arrow">→</span>
+      </a>
+    )
+  }
+</Article>

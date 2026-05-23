@@ -1,0 +1,43 @@
+---
+import { getCollection, render } from "astro:content";
+import Article from "../../layouts/Article.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { data } = post;
+
+const dateStr = data.pubDate.toLocaleDateString("en-GB", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+});
+
+// rough reading time from raw markdown body
+const words = (post.body ?? "").trim().split(/\s+/).length;
+const readMins = Math.max(1, Math.round(words / 200));
+
+const meta = [
+  { k: "pillar", v: data.pillar, accent: true },
+  { k: "published", v: dateStr },
+  { k: "read", v: `${readMins} min` },
+];
+---
+
+<Article
+  title={data.title}
+  description={data.description}
+  image={data.cover}
+  backHref="/blog"
+  backLabel="all posts"
+  meta={meta}
+>
+  <Content />
+</Article>
