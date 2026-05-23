@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from "astro:content";
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+const { project } = Astro.props;
+const { data } = project;
+---
+
+<a class="card" href={`/projects/${project.id}`} data-tilt data-reveal>
+  {data.cover && (
+    <div class="card__cover">
+      <img src={data.cover} alt="" />
+    </div>
+  )}
+  <div class="card__kicker">
+    <span>{data.company}</span>
+    <span>{data.period}</span>
+  </div>
+  <h3 class="card__title">{data.title}</h3>
+  <p class="card__desc">{data.description}</p>
+
+  {
+    data.metrics.length > 0 && (
+      <div class="card__metrics">
+        {data.metrics.slice(0, 3).map((m) => (
+          <div class="card__metric">
+            <div class="v">{m.value}</div>
+            <div class="l">{m.label}</div>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  <span class="card__foot">Read case study <span class="arrow">→</span></span>
+</a>

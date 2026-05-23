@@ -1,0 +1,17 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="404 — Not found">
+  <section class="wrap section" style="text-align:center; padding-block: 18vh;">
+    <p class="eyebrow" style="justify-content:center">error 404</p>
+    <h1 class="h-section">This route returned null.</h1>
+    <p class="lead" style="margin-inline:auto">
+      The page you're after doesn't exist — or moved. Let's get you back to a known good state.
+    </p>
+    <div style="margin-top:32px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a class="btn btn--primary" href="/">Home</a>
+      <a class="btn" href="/blog">Blog</a>
+      <a class="btn" href="/projects">Projects</a>
+    </div>
+  </section>
+</Base>

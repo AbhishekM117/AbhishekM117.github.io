@@ -1,0 +1,58 @@
+---
+import { site } from "../data/site";
+import ThemeToggle from "./ThemeToggle.astro";
+
+// Links point to the home-page section anchors. On sub-pages we send the
+// user back to the home page first (e.g. /#projects).
+const links = [
+  { label: "about", href: "/#about" },
+  { label: "work", href: "/#experience" },
+  { label: "skills", href: "/#skills" },
+  { label: "projects", href: "/projects" },
+  { label: "blog", href: "/blog" },
+  { label: "contact", href: "/#contact" },
+];
+---
+
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a href="/" class="nav__brand">
+      <span class="dot"></span>
+      {site.name.toLowerCase().replace(" ", "_")}
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+
+    <div class="nav__right">
+      <ThemeToggle />
+      <button
+        class="nav__toggle"
+        id="navToggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  toggle?.addEventListener("click", () => {
+    const open = links?.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(!!open));
+    toggle.textContent = open ? "✕" : "☰";
+  });
+  // close menu when a link is tapped
+  links?.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      links.classList.remove("open");
+      toggle?.setAttribute("aria-expanded", "false");
+      if (toggle) toggle.textContent = "☰";
+    }),
+  );
+</script>

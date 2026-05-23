@@ -1,0 +1,46 @@
+---
+import Base from "./Base.astro";
+
+interface MetaItem {
+  k: string;
+  v: string;
+  accent?: boolean;
+}
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  backHref: string;
+  backLabel: string;
+  meta: MetaItem[];
+}
+
+const { title, description, image, backHref, backLabel, meta } = Astro.props;
+---
+
+<Base title={`${title} — Abhishek Murali`} description={description} image={image}>
+  <article class="wrap article">
+    <header class="article__head">
+      <a class="article__back" href={backHref}>← {backLabel}</a>
+      <h1>{title}</h1>
+      <div class="article__meta">
+        {
+          meta.map((m) => (
+            <span>
+              <span class:list={["k", m.accent && "accent"]}>{m.k}:</span>{" "}
+              <span class:list={[m.accent && "accent"]}>{m.v}</span>
+            </span>
+          ))
+        }
+      </div>
+    </header>
+
+    {image && (
+      <img src={image} alt="" class="post-cover" aria-hidden="true" />
+    )}
+
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</Base>

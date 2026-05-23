@@ -1,0 +1,221 @@
+---
+import Base from "../layouts/Base.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import PostCard from "../components/PostCard.astro";
+import { site, stats } from "../data/site";
+import { experience } from "../data/experience";
+import { skills } from "../data/skills";
+import { education } from "../data/education";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects", ({ data }) => !data.draft))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<Base>
+  <!-- ============ HERO ============ -->
+  <section class="wrap hero">
+    <div class="hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow hero__tag reveal">{site.role} · {site.location}</p>
+        <h1 class="reveal" style="animation-delay:.05s">
+          Abhishek<br /><span class="accent">Murali</span>.<span class="blink-cursor" aria-hidden="true"></span>
+        </h1>
+        <p class="hero__role reveal" style="animation-delay:.12s">
+          {site.tagline}
+        </p>
+        <div class="hero__cta reveal" style="animation-delay:.18s">
+          <a class="btn btn--primary" href="/projects"
+            >View work <span class="arrow">→</span></a
+          >
+          <a class="btn" href="/blog">Read the blog</a>
+          <a class="btn" href={site.cvUrl} target="_blank" rel="noopener"
+            >Download CV ↓</a
+          >
+        </div>
+      </div>
+      <div class="hero__photo-wrap reveal" style="animation-delay:.08s">
+        <img
+          src="/assets/profile.jpg"
+          alt="Abhishek Murali"
+          class="hero__photo"
+        />
+      </div>
+    </div>
+
+    <!-- ============ STAT BAND ============ -->
+    <div class="stats reveal" style="animation-delay:.24s">
+      {
+        stats.map((s) => (
+          <div class="stat">
+            <div class="stat__value">{s.value}</div>
+            <div class="stat__label">{s.label}</div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="wrap section">
+    <p class="eyebrow">about</p>
+    <h2 class="h-section">Data platforms that earn trust.</h2>
+    <div class="about__grid">
+      <img
+        src="/assets/headshot.jpeg"
+        alt="Abhishek Murali"
+        class="about__photo"
+      />
+      <div>
+        <p class="lead">
+          I'm a Principal Data Analyst with 6+ years across Product, Ops,
+          Finance, and IoT / hardware. I define the metrics, harden the data
+          quality, and ship the decision support — from BigQuery warehouses and
+          Airflow pipelines to self-serve BI that senior stakeholders actually
+          use. Strong on GDPR / PII, SQL and Python, and turning messy
+          telemetry into board-grade clarity.
+        </p>
+        <p class="eyebrow" style="margin-top:36px">education</p>
+        <div class="edu-cards">
+          {
+            education.map((e) => (
+              <div class="edu-card">
+                <img
+                  src={e.logo}
+                  alt={e.institution}
+                  class="edu-card__logo"
+                />
+                <div>
+                  <div class="edu-card__degree">{e.degree}</div>
+                  <div class="edu-card__inst">
+                    {e.institution} · {e.location}
+                  </div>
+                  {e.period && <div class="edu-card__period">{e.period}</div>}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="wrap section">
+    <p class="eyebrow">work</p>
+    <h2 class="h-section">Experience</h2>
+    <div class="xp">
+      {
+        experience.map((role, i) => (
+          <article class="xp__row" data-reveal style={`transition-delay:${i * 90}ms`}>
+            <div class="xp__meta">
+              <div class="co">
+                {role.company}
+                {role.current && <span class="badge">now</span>}
+              </div>
+              <div class="title">{role.title}</div>
+              <div class="period">
+                {role.period} · {role.location}
+              </div>
+            </div>
+            <ul class="xp__points">
+              {role.points.map((p) => (
+                <li set:html={p.replace(/\b(\d+%|−\d+%|zero|v1)\b/g, "<strong>$1</strong>")} />
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="wrap section">
+    <p class="eyebrow">stack</p>
+    <h2 class="h-section">Technical competencies</h2>
+    <div class="skills">
+      {
+        skills.map((g, i) => (
+          <div class="skill-card" data-reveal style={`transition-delay:${i * 70}ms`}>
+            <div class="skill-card__head">
+              <span class="skill-card__idx">[{g.index}]</span>
+              <span class="skill-card__label">{g.label}</span>
+            </div>
+            <div class="tags">
+              {g.items.map((i) => (
+                <span class="tag">{i}</span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="wrap section">
+    <p class="eyebrow">case studies</p>
+    <h2 class="h-section">Selected work</h2>
+    <p class="lead">
+      Measurable, decision-grade analysis — the metric, the segmentation, and
+      the action it drove.
+    </p>
+    <div class="card-grid">
+      {projects.map((p) => <ProjectCard project={p} />)}
+    </div>
+    <div style="margin-top:32px">
+      <a class="btn" href="/projects">All projects <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- ============ BLOG ============ -->
+  <section id="insights" class="wrap section">
+    <p class="eyebrow">writing</p>
+    <h2 class="h-section">Data musings</h2>
+    <p class="lead">
+      Field notes on platform engineering, governance, and turning metrics into
+      product decisions.
+    </p>
+    <div class="card-grid">
+      {posts.map((p) => <PostCard post={p} />)}
+    </div>
+    <div style="margin-top:32px">
+      <a class="btn" href="/blog">All posts <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="wrap section">
+    <p class="eyebrow">contact</p>
+    <h2 class="h-section">Let's talk data.</h2>
+    <div class="contact">
+      <a class="row" href={`mailto:${site.email}`}>
+        <span class="k">email</span><span>{site.email}</span>
+      </a>
+      <a class="row" href={site.social.linkedin} target="_blank" rel="noopener">
+        <span class="k">linkedin</span><span>in/abhishek--murali</span>
+      </a>
+      <a class="row" href={`tel:${site.phone.replace(/\s/g, "")}`}>
+        <span class="k">phone</span><span>{site.phone}</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- pointer-driven glow on cards -->
+  <script>
+    // pointer-driven glow on cards
+    document.querySelectorAll<HTMLElement>("[data-tilt]").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+        el.style.setProperty("--my", `${e.clientY - r.top}px`);
+      });
+    });
+
+  </script>
+</Base>

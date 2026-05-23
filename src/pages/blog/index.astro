@@ -1,0 +1,81 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const pillars = [...new Set(posts.map((p) => p.data.pillar))].sort();
+---
+
+<Base
+  title="Blog — Abhishek Murali"
+  description="Field notes on data platform engineering, governance, and product analytics."
+>
+  <section class="wrap page-head section">
+    <p class="eyebrow">writing</p>
+    <h1 class="h-section">Data musings</h1>
+    <p class="lead">
+      Notes from building production data platforms — engineering, governance,
+      experimentation, and the metrics behind product decisions.
+    </p>
+
+    <div class="filter-bar" role="group" aria-label="Filter by pillar">
+      <button class="filter-chip" data-pillar="" aria-pressed="true">All</button>
+      {pillars.map((p) => (
+        <button class="filter-chip" data-pillar={p} aria-pressed="false">{p}</button>
+      ))}
+    </div>
+
+    <div class="post-list" id="post-list">
+      {posts.map((p) => {
+        const dateStr = p.data.pubDate.toLocaleDateString("en-GB", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        });
+        return (
+          <a
+            class="post-row"
+            href={`/blog/${p.id}`}
+            data-pillar={p.data.pillar}
+          >
+            <div class="post-row__meta">
+              <span class="post-row__date">{dateStr}</span>
+              <span class="post-row__pillar">{p.data.pillar}</span>
+            </div>
+            <div class="post-row__body">
+              <span class="post-row__title">{p.data.title}</span>
+              <span class="post-row__desc">{p.data.description}</span>
+              {p.data.tags.length > 0 && (
+                <div class="post-row__tags">
+                  {p.data.tags.map((t: string) => (
+                    <span class="post-row__tag">{t}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <script>
+    const chips = document.querySelectorAll<HTMLButtonElement>(".filter-chip");
+    const rows = document.querySelectorAll<HTMLElement>(".post-row");
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const selected = chip.dataset.pillar ?? "";
+        chips.forEach((c) => c.setAttribute("aria-pressed", "false"));
+        chip.setAttribute("aria-pressed", "true");
+        rows.forEach((row) => {
+          const match = selected === "" || row.dataset.pillar === selected;
+          row.style.display = match ? "" : "none";
+        });
+      });
+    });
+  </script>
+</Base>

@@ -1,0 +1,37 @@
+---
+import Base from "../../layouts/Base.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const projects = (
+  await getCollection("projects", ({ data }) => !data.draft)
+).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base
+  title="Projects — Abhishek Murali"
+  description="Decision-grade data case studies: the metric, the segmentation, and the action it drove."
+>
+  <section class="wrap page-head section">
+    <p class="eyebrow">case studies</p>
+    <h1 class="h-section">Projects & case studies</h1>
+    <p class="lead">
+      Each one starts from a real operational question and ends in a decision —
+      a deployment strategy, a product fix, or a retention play.
+    </p>
+
+    <div class="card-grid">
+      {projects.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll<HTMLElement>("[data-tilt]").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+        el.style.setProperty("--my", `${e.clientY - r.top}px`);
+      });
+    });
+  </script>
+</Base>
